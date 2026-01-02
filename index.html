@@ -18,7 +18,7 @@
             margin: 0;
         }
 
-        /* Overlay */
+        /* Overlay content */
         .overlay {
             background: rgba(0, 0, 0, 0.45);
             min-height: 100vh;
@@ -28,13 +28,13 @@
             align-items: center;
         }
 
-        /* Content box */
+        /* Glass box */
         .glass-box {
             background: rgba(209, 199, 252, 0.95);
             backdrop-filter: blur(6px);
         }
 
-        /* Buttons */
+        /* Week buttons */
         .week-button {
             display: block;
             padding: 1.5rem;
@@ -73,59 +73,40 @@
 <body>
 
 <!-- NAVBAR -->
-<header class="fixed top-0 left-0 w-full z-50 bg-purple-900 bg-opacity-90 text-white">
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+<header class="fixed top-0 left-0 w-full z-50 bg-purple-900 bg-opacity-90 text-white shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4 relative">
 
-        <a href="index.html" class="text-xl font-bold tracking-wide">
-            PRTT
-        </a>
+        <!-- Logo -->
+        <a href="index.html" class="text-xl font-bold tracking-wide z-50 relative">PRTT</a>
 
-        <!-- Desktop menu -->
-        <nav class="hidden md:flex space-x-6 text-lg">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="Lesweek1.html" class="nav-link">Week 1</a>
-            <a href="Lesweek2.html" class="nav-link">Week 2</a>
-            <a href="Lesweek3.html" class="nav-link">Week 3</a>
-            <a href="Lesweek4.html" class="nav-link">Week 4</a>
-            <a href="Lesweek5.html" class="nav-link">Week 5</a>
-            <a href="Lesweek6.html" class="nav-link">Week 6</a>
-            <a href="Lesweek7.html" class="nav-link">Week 7</a>
-            <a href="Lesweek8.html" class="nav-link">Week 8</a>
-            <a href="Lesweek9.html" class="nav-link">Week 9</a>
-            <a href="Lesweek10.html" class="nav-link">Week 10</a>
-            <a href="Lesweek11.html" class="nav-link">Week 11</a>
-            <a href="Lesweek12.html" class="nav-link">Week 12</a>
-            <a href="Lesweek13.html" class="nav-link">Week 13</a>
-        </nav>
-
-        <!-- Hamburger -->
-        <button id="menu-btn" class="md:hidden text-3xl">
+        <!-- Hamburger knop (altijd zichtbaar) -->
+        <button id="menu-btn" class="relative z-50 text-3xl text-white">
             ☰
         </button>
     </div>
 </header>
 
-<!-- Overlay achter mobiel menu -->
+<!-- Overlay -->
 <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 
-<!-- Mobile slide menu -->
+<!-- Mobiel/Laptop menu (slide-in) -->
 <nav id="mobile-menu"
-     class="fixed top-0 left-0 h-full w-64 bg-purple-800 text-white transform -translate-x-full transition-transform duration-300 z-50 p-6 space-y-4">
+     class="fixed top-0 left-0 h-full w-64 bg-purple-800 text-white transform -translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-y-auto">
 
     <a href="index.html" class="nav-link block">Home</a>
-    <a href="Lesweek1.html" class="nav-link block">Lesweek 1</a>
-    <a href="Lesweek2.html" class="nav-link block">Lesweek 2</a>
-    <a href="Lesweek3.html" class="nav-link block">Lesweek 3</a>
-    <a href="Lesweek4.html" class="nav-link block">Lesweek 4</a>
-    <a href="Lesweek5.html" class="nav-link block">Lesweek 5</a>
-    <a href="Lesweek6.html" class="nav-link block">Lesweek 6</a>
-    <a href="Lesweek7.html" class="nav-link block">Lesweek 7</a>
-    <a href="Lesweek8.html" class="nav-link block">Lesweek 8</a>
-    <a href="Lesweek9.html" class="nav-link block">Lesweek 9</a>
-    <a href="Lesweek10.html" class="nav-link block">Lesweek 10</a>
-    <a href="Lesweek11.html" class="nav-link block">Lesweek 11</a>
-    <a href="Lesweek12.html" class="nav-link block">Lesweek 12</a>
-    <a href="Lesweek13.html" class="nav-link block">Lesweek 13</a>
+    <a href="Lesweek1.html" class="nav-link block">Lesweek 1 <span class="text-sm text-purple-300 block">1ste schetsen</span></a>
+    <a href="Lesweek2.html" class="nav-link block">Lesweek 2 <span class="text-sm text-purple-300 block">2de schetsen</span></a>
+    <a href="Lesweek3.html" class="nav-link block">Lesweek 3 <span class="text-sm text-purple-300 block">Midi-prototyping 1</span></a>
+    <a href="Lesweek4.html" class="nav-link block">Lesweek 4 <span class="text-sm text-purple-300 block">Midi-prototyping 2</span></a>
+    <a href="Lesweek5.html" class="nav-link block">Lesweek 5 <span class="text-sm text-purple-300 block">ChatGPT</span></a>
+    <a href="Lesweek6.html" class="nav-link block">Lesweek 6 <span class="text-sm text-purple-300 block">HTML ontwerpdocumentatie</span></a>
+    <a href="Lesweek7.html" class="nav-link block">Lesweek 7 <span class="text-sm text-purple-300 block">Herfstvakantie</span></a>
+    <a href="Lesweek8.html" class="nav-link block">Lesweek 8 <span class="text-sm text-purple-300 block">Examens</span></a>
+    <a href="Lesweek9.html" class="nav-link block">Lesweek 9 <span class="text-sm text-purple-300 block">Brugdag</span></a>
+    <a href="Lesweek10.html" class="nav-link block">Lesweek 10 <span class="text-sm text-purple-300 block">Figma fase 1</span></a>
+    <a href="Lesweek11.html" class="nav-link block">Lesweek 11 <span class="text-sm text-purple-300 block">Figma fase 2</span></a>
+    <a href="Lesweek12.html" class="nav-link block">Lesweek 12 <span class="text-sm text-purple-300 block">Figma interactief</span></a>
+    <a href="Lesweek13.html" class="nav-link block">Lesweek 13 <span class="text-sm text-purple-300 block">Verder werken</span></a>
 </nav>
 
 <!-- CONTENT -->
@@ -133,7 +114,7 @@
     <main class="glass-box max-w-5xl w-full rounded-3xl shadow-2xl p-10 text-center">
 
         <h1 class="text-4xl font-bold mb-4 text-purple-900">
-            Liene Jansen
+            Liene Jansen - 1GDM2
         </h1>
 
         <p class="text-lg mb-10 text-purple-800">
@@ -141,19 +122,79 @@
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="Lesweek1.html" class="week-button">Lesweek 1</a>
-            <a href="Lesweek2.html" class="week-button">Lesweek 2</a>
-            <a href="Lesweek3.html" class="week-button">Lesweek 3</a>
-            <a href="Lesweek4.html" class="week-button">Lesweek 4</a>
-            <a href="Lesweek5.html" class="week-button">Lesweek 5</a>
-            <a href="Lesweek6.html" class="week-button">Lesweek 6</a>
-            <a href="Lesweek7.html" class="week-button">Lesweek 7</a>
-            <a href="Lesweek8.html" class="week-button">Lesweek 8</a>
-            <a href="Lesweek9.html" class="week-button">Lesweek 9</a>
-            <a href="Lesweek10.html" class="week-button">Lesweek 10</a>
-            <a href="Lesweek11.html" class="week-button">Lesweek 11</a>
-            <a href="Lesweek12.html" class="week-button">Lesweek 12</a>
-            <a href="Lesweek13.html" class="week-button">Lesweek 13</a>
+            <a href="Lesweek1.html" class="week-button flex flex-col items-center">
+                Lesweek 1
+                <span class="text-sm mt-1 text-purple-900">1ste schetsen</span>
+            </a>
+            <a href="Lesweek2.html" class="week-button flex flex-col items-center">
+                Lesweek 2
+                <span class="text-sm mt-1 text-purple-900">2de schetsen</span>
+            </a>
+            <a href="Lesweek3.html" class="week-button flex flex-col items-center">
+                Lesweek 3
+                <span class="text-sm mt-1 text-purple-900">Midi-prototyping 1</span>
+            </a>
+            <a href="Lesweek4.html" class="week-button flex flex-col items-center">
+                Lesweek 4
+                <span class="text-sm mt-1 text-purple-900">Midi-prototyping 2</span>
+            </a>
+            <a href="Lesweek5.html" class="week-button flex flex-col items-center">
+                Lesweek 5
+                <span class="text-sm mt-1 text-purple-900">ChatGPT</span>
+            </a>
+            <a href="Lesweek6.html" class="week-button flex flex-col items-center">
+                Lesweek 6
+                <span class="text-sm mt-1 text-purple-900">HTML ontwerpdocumentatie</span>
+            </a>
+            <a href="Lesweek7.html" class="week-button flex flex-col items-center">
+                Lesweek 7
+                <span class="text-sm mt-1 text-purple-900">Herfstvakantie</span>
+            </a>
+            <a href="Lesweek8.html" class="week-button flex flex-col items-center">
+                Lesweek 8
+                <span class="text-sm mt-1 text-purple-900">Examens</span>
+            </a>
+            <a href="Lesweek9.html" class="week-button flex flex-col items-center">
+                Lesweek 9
+                <span class="text-sm mt-1 text-purple-900">Brugdag</span>
+            </a>
+            <a href="Lesweek10.html" class="week-button flex flex-col items-center">
+                Lesweek 10
+                <span class="text-sm mt-1 text-purple-900">Figma fase 1</span>
+            </a>
+            <a href="Lesweek11.html" class="week-button flex flex-col items-center">
+                Lesweek 11
+                <span class="text-sm mt-1 text-purple-900">Figma fase 2</span>
+            </a>
+            <a href="Lesweek12.html" class="week-button flex flex-col items-center">
+                Lesweek 12
+                <span class="text-sm mt-1 text-purple-900">Figma interactief</span>
+            </a>
+            <a href="Lesweek13.html" class="week-button flex flex-col items-center">
+                Lesweek 13
+                <span class="text-sm mt-1 text-purple-900">Verder werken</span>
+            </a>
+        </div>
+
+        <!-- PDF & GITHUB KNOPPEN -->
+        <div class="flex justify-center gap-4 mt-12 flex-wrap">
+
+            <!-- PDF -->
+            <a href="2526_PRTT_JansenL_Ontwerpdocumentatie.zip"
+               target="_blank"
+               class="flex items-center gap-2 bg-purple-900 text-yellow-400 px-4 py-2 rounded-lg text-sm font-medium shadow hover:bg-purple-800 transition">
+                📄
+                <span>Documentatie</span>
+            </a>
+
+            <!-- GITHUB -->
+            <a href="https://github.com/LieneJansen/JansenLiene.git"
+               target="_blank"
+               class="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium shadow hover:bg-gray-700 transition">
+                💻
+                <span>GitHub</span>
+            </a>
+
         </div>
 
     </main>

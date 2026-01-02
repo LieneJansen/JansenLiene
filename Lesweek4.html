@@ -1,50 +1,196 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML & CSS</title>
+    <title>Lesweek 4 | Projectdocumentatie PRTT</title>
 
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="assets/styles.css">
-    <link rel="stylesheet" href="assets/flexboxes.css">
-    <link rel="stylesheet" href="assets/nav.css">
-    <link rel="stylesheet" href="assets/typography.css">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background-image: url('achtergrondfoto.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.45);
+            min-height: 100vh;
+            padding-top: 90px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .glass-box {
+            background: rgba(209, 199, 252, 0.95);
+            backdrop-filter: blur(6px);
+        }
+
+        .nav-link:hover {
+            color: #c4b5fd;
+        }
+
+        .active {
+            color: #facc15;
+            font-weight: 700;
+        }
+
+        .zoom-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .zoom-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 1rem;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="title">
-        Liene Jansen projectdocumentatie PRTT
-        </div>
-        <div>
-            <ul class="vertical-buttons">
-                <li><a href="index.html">Home</a></li>
-            
-            </ul>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-purple-900 bg-opacity-90 text-white">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <a href="index.html" class="text-xl font-bold">PRTT</a>
+
+        <nav class="hidden md:flex space-x-6 text-lg">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="Lesweek1.html" class="nav-link">Week 1</a>
+            <a href="Lesweek2.html" class="nav-link">Week 2</a>
+            <a href="Lesweek3.html" class="nav-link">Week 3</a>
+            <a href="Lesweek4.html" class="nav-link">Week 4</a>
+            <a href="Lesweek5.html" class="nav-link">Week 5</a>
+            <a href="Lesweek6.html" class="nav-link">Week 6</a>
+            <a href="Lesweek7.html" class="nav-link">Week 7</a>
+            <a href="Lesweek8.html" class="nav-link">Week 8</a>
+            <a href="Lesweek9.html" class="nav-link">Week 9</a>
+            <a href="Lesweek10.html" class="nav-link">Week 10</a>
+            <a href="Lesweek11.html" class="nav-link">Week 11</a>
+            <a href="Lesweek12.html" class="nav-link">Week 12</a>
+            <a href="Lesweek13.html" class="nav-link">Week 13</a>
+        </nav>
+
+        <button id="menu-btn" class="md:hidden text-3xl">☰</button>
     </div>
-    <div></h1>Lesweek 4</div>
-    <h1>Midi-prototyping 2</h1>
-    <h2>Perronscherm</h2>
-    <p>Ik heb de trein en info ingevuld en de juiste kleur gegeven.</p>
-    <p>Status ingevuld en rood als een verandering plaatsvindt.</p>
-    <p>Uur van aankomen en rood in geval van vertraging.</p>
-    <p>Info in het grijs als trein afgeschaft is.</p>
-    <p>In de algemene balk heb ik het perron en station onder elkaar gezet voor een beteroverzicht.</p>
-    <p>Heb om een beter overzicht te krijgen bij de treinen een zebra systeem met dezelfde paarse kleur als algemene balk maar met 38% opacity.</p>
-    <h2>Overzichtsscherm</h2>
-    <img src="midi2o.png" alt="midi2o" width="300" height="200">
-    <p>Alle info er ingezet.</p>
-    <p>De paarse lichte balk voor zebra overzicht te creeëren.</p>
-    <p>De QR-code erin geplaatst.</p>
-    <p>De rode en grijze kleuren toegevoegd waar nodig.</p>
-    <p>Heb het uur van aankomst en perron van plaats gewisseld omdat het mij praktischer leek.</p>
-    <h2>Wagonscherm</h2>
-    <img src="midi2w.png" alt="midi2w" width="300" height="200">
-    <p>Heb alle info ingevuld.</p>
-    <p>Rood waar nodig voor vertraging/ verandering van spoor.</p>
-    <p>De QR-code toegevoegd.</p>
-    <p>De wagon iconen erbij gezet, de wagons een donker kleur gegeven, de 1ste en 2de klas heb ik in de wagon gezet.</p>
-    <p>De deur kant heb ik in het blauw gezet omdat het nuttige info is maar niet noodzakelijk.</p>
-    <p>Bij safety nummer ben ik nog niet helemaal zeker hoe ik dat ga doen.</p>
+</header>
+
+<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+<nav id="mobile-menu"
+     class="fixed top-0 left-0 h-full w-64 bg-purple-800 text-white transform -translate-x-full transition-transform duration-300 z-50 p-6 space-y-4">
+    <a href="index.html" class="nav-link block">Home</a>
+    <a href="Lesweek4.html" class="nav-link block">Lesweek 4</a>
+</nav>
+
+<!-- CONTENT -->
+<div class="overlay">
+    <main class="glass-box max-w-5xl w-full rounded-3xl shadow-2xl p-10 space-y-12">
+
+        <h1 class="text-4xl font-bold text-purple-900 text-center">
+            Lesweek 4 – Midi-prototyping 2
+        </h1>
+
+        <!-- NAAM ONDER DE TITEL -->
+        <p class="text-lg text-gray-800 text-center font-medium mb-6">
+            Jansen Liene - 1GDM2
+        </p>
+
+        <!-- Perronscherm -->
+        <section class="flex flex-col md:flex-row gap-8 items-start">
+            <img src="midi2p.png" class="zoomable w-64 rounded-xl shadow-lg cursor-pointer" alt="Midi prototyping perronscherm">
+            <div>
+                <h2 class="text-2xl font-semibold text-purple-900 mb-4">Perronscherm</h2>
+                <div class="space-y-2 text-purple-800">
+                    <p>Ik heb de trein en info ingevuld en de juiste kleuren gegeven.</p>
+                    <p>Status is ingevuld en wordt rood als er een verandering plaatsvindt.</p>
+                    <p>Het aankomstuur wordt rood weergegeven bij vertraging.</p>
+                    <p>Info wordt grijs als de trein afgeschaft is.</p>
+                    <p>In de algemene balk heb ik perron en station onder elkaar gezet voor een beter overzicht.</p>
+                    <p>Voor extra overzicht heb ik een zebra-systeem gebruikt met dezelfde paarse kleur als de algemene balk, maar met 38% opacity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overzichtsscherm -->
+        <section class="flex flex-col md:flex-row gap-8 items-start">
+            <img src="midi2o.png" class="zoomable w-72 rounded-xl shadow-lg cursor-pointer" alt="Midi prototyping overzichtsscherm">
+            <div>
+                <h2 class="text-2xl font-semibold text-purple-900 mb-2">Overzichtsscherm</h2>
+                <p class="text-purple-800 mb-2">Alle informatie is ingevuld.</p>
+                <p class="text-purple-800 mb-2">De lichtpaarse balk wordt gebruikt om een zebra-overzicht te creëren.</p>
+                <p class="text-purple-800 mb-2">De QR-code is toegevoegd.</p>
+                <p class="text-purple-800 mb-2">Rode en grijze kleuren zijn toegevoegd waar nodig.</p>
+                <p class="text-purple-800">Het aankomstuur en perron zijn van plaats gewisseld omdat dit praktischer leek.</p>
+            </div>
+        </section>
+
+        <!-- Wagonscherm -->
+        <section class="flex flex-col md:flex-row gap-8 items-start">
+            <img src="midi2w.png" class="zoomable w-72 rounded-xl shadow-lg cursor-pointer" alt="Midi prototyping wagonscherm">
+            <div>
+                <h2 class="text-2xl font-semibold text-purple-900 mb-2">Wagonscherm</h2>
+                <p class="text-purple-800 mb-2">Alle informatie is ingevuld.</p>
+                <p class="text-purple-800 mb-2">Rood wordt gebruikt bij vertraging of verandering van spoor.</p>
+                <p class="text-purple-800 mb-2">De QR-code is toegevoegd.</p>
+                <p class="text-purple-800 mb-2">Wagon-iconen zijn toegevoegd, wagons zijn donker gekleurd en eerste en tweede klas staat in de wagon zelf.</p>
+                <p class="text-purple-800 mb-2">De deurkant is blauw gekleurd omdat dit nuttige, maar niet strikt noodzakelijke informatie is.</p>
+                <p class="text-purple-800">Over het safety-nummer ben ik nog niet helemaal zeker hoe ik dit ga aanpakken.</p>
+            </div>
+        </section>
+
+        <img src="Midi2.png" class="zoomable w-64 rounded-xl shadow-lg cursor-pointer" alt="Midi prototyping overzicht">
+
+    </main>
+</div>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('-translate-x-full');
+        overlay.classList.toggle('hidden');
+    });
+
+    overlay.addEventListener('click', () => {
+        mobileMenu.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+    });
+
+    const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+        img.addEventListener('click', () => {
+            const overlay = document.createElement('div');
+            overlay.className = 'zoom-overlay';
+            const zoomImg = document.createElement('img');
+            zoomImg.src = img.src;
+            overlay.appendChild(zoomImg);
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', () => overlay.remove());
+        });
+    });
+</script>
+
 </body>
 </html>
-
